@@ -52,6 +52,9 @@ public class Driver {
         //Checking a particular restaurant can fulfill the order on not
         restaurantService.canFulfillOrder(restaurant1,orderItems);
 
+        //Checking a restaurant1 can accept order or not
+        restaurant1.canAcceptOrder(orderItems);
+
         //Placing Order for user Ashwin
         orderService.placeOrder("Ashwin", orderItems, SelectionStrategyType.LOWEST_COST);
 

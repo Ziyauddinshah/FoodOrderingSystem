@@ -32,10 +32,10 @@ public class Restaurant {
 
     public void canAcceptOrder(Map<String, Integer> items) {
         if (currentOrders >= max_no_of_orders) {
-            System.out.println("Restaurant can not accept the order");
+            System.out.println("Restaurant "+getName()+" can't accept the order");
             return;
         }
-        System.out.println("Restaurant can accept the order");
+        System.out.println("Restaurant "+getName()+" can accept the order");
     }
 
     public void acceptOrder() {

@@ -53,7 +53,7 @@ public class OrderRepositoryImplementation implements OrderRepository {
                 return;
             }
 
-            if (bestRestaurant.getCurrentOrders() >= bestRestaurant.getMax_no_of_orders()) {
+            if (bestRestaurant.getCurrentOrders() == bestRestaurant.getMax_no_of_orders()) {
                 System.out.println("Restaurant " + bestRestaurant.getName() + " has reached max orders.");
                 return;
             }
@@ -65,10 +65,8 @@ public class OrderRepositoryImplementation implements OrderRepository {
             order.assignRestaurant(bestRestaurant);
             orders.add(order);
             System.out.println("Order assigned to " + bestRestaurant.getName() + " (User: " + user + ")");
-            order.markAsCompleted();
             completeOrder(order.getOrderId());
             bestRestaurant.completeOrder();
-
         } catch (Exception e){
             System.out.println(e.toString());
         }
